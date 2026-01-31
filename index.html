@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AF Trading Pro | Professional Trading Platform</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+}
+header{
+  background:#020617;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{color:#38bdf8;}
+nav a{
+  color:#38bdf8;
+  margin:0 10px;
+  text-decoration:none;
+}
+section{
+  padding:40px;
+  text-align:center;
+}
+.hero{
+  background:linear-gradient(135deg,#020617,#0f172a);
+}
+.btn{
+  background:#22c55e;
+  padding:12px 20px;
+  color:black;
+  text-decoration:none;
+  border-radius:6px;
+  display:inline-block;
+  margin-top:15px;
+}
+.box{
+  background:#020617;
+  padding:20px;
+  margin:20px auto;
+  max-width:350px;
+  border-radius:8px;
+}
+input,button{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+button{
+  background:#38bdf8;
+  border:none;
+  cursor:pointer;
+}
+footer{
+  background:#020617;
+  padding:15px;
+  text-align:center;
+}
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AF Trading Pro</h1>
+<nav>
+<a href="#" onclick="show('home')">Home</a>
+<a href="#" onclick="show('login')">Login</a>
+<a href="#" onclick="show('register')">Register</a>
+<a href="#" onclick="show('dashboard')">Dashboard</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+<h2>Professional Trading Platform</h2>
+<p>Secure • Transparent • PKR Payments</p>
+<p>Easypaisa | JazzCash Recharge Available</p>
+<a class="btn" onclick="show('register')">Start Trading</a>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="hidden">
+<div class="box">
+<h2>User Login</h2>
+<input type="email" placeholder="Gmail">
+<input type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="hidden">
+<div class="box">
+<h2>Create Account</h2>
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Gmail">
+<input type="password" placeholder="Password">
+<button onclick="register()">Register</button>
+</div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="hidden">
+<div class="box">
+<h2>User Dashboard</h2>
+<p><strong>Balance:</strong> PKR <span id="balance">0</span></p>
+<button onclick="show('recharge')">Recharge Account</button>
+</div>
+</section>
+
+<!-- RECHARGE -->
+<section id="recharge" class="hidden">
+<div class="box">
+<h2>Recharge (PKR)</h2>
+<input type="number" placeholder="Enter Amount PKR">
+<input type="file">
+<button onclick="alert('Request sent to Admin')">Submit Screenshot</button>
+<p>Easypaisa / JazzCash</p>
+</div>
+</section>
+
+<footer>
+<p>📞 Contact: 0349-1441853</p>
+<p>© 2026 AF Trading Pro</p>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
+function login(){
+  alert("Login Successful");
+  show('dashboard');
+}
+function register(){
+  alert("Account Created Successfully");
+  show('login');
+}
+</script>
+
+</body>
+  </html>
